@@ -1,10 +1,10 @@
 # laba2
 ## example1
+<div style="text-align: right">
 ```
-    Код определяет функцию _example_, 
-которая выводит фразу "Hello, World!!!! (c) Kazantsev", 
-и затем вызывает эту функцию.
+Код определяет функцию _example_, которая выводит фразу "Hello, World!!! (c) Kazantsev", и затем вызывает эту функцию.
 ```
+</div>
 
 ## example2
 ```
