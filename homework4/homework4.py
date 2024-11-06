@@ -1,11 +1,28 @@
-def find_multiples(x, numbers):
-    is_multiple = lambda num: num % x == 0
-    multiples = list(filter(is_multiple, numbers))
-    return multiples
+from datetime import date
 
-if __name__ == "__main__":
-    x = int(input("Введите число X: "))
-    numbers = random.sample(range(201), 10) 
-    print(f"Случайный список чисел: {numbers}")
-    multiples = find_multiples(x, numbers)
-    print(f"Числа, кратные {x}: {multiples}")
+def calculate_age():
+    # Запрашиваем ввод даты рождения
+    while True:
+        try:
+            birth_date = input("Введите вашу дату рождения в формате ДД/ММ/ГГГГ: ")
+            day, month, year = map(int, birth_date.split('/'))
+            birthdate = date(year, month, day)
+            break
+        except ValueError:
+            print("Неверный формат ввода. Пожалуйста, введите дату в формате ДД/ММ/ГГГГ.")
+    
+    # Получаем текущую дату
+    today = date.today()
+    
+    # Вычисляем возраст
+    age = today.year - birthdate.year
+    
+    # Учитываем месяц и день
+    if (today.month, today.day) < (birthdate.month, birthdate.day):
+        age -= 1
+        
+    return age
+
+# Вызов функции
+age = calculate_age()
+print(f"Ваш возраст: {age}")
